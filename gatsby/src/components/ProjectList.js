@@ -2,25 +2,23 @@ import { Link } from 'gatsby';
 import React from 'react'
 import styled from 'styled-components';
 import Img from 'gatsby-image'
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const ProjectGridStyles = styled.div`
 
   .project-grid {
     display: grid;
-    ${'' /* grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); */}
     grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
-    gap: 100px;
+    gap: 8rem;
+
+    @media screen and (max-width: 700px) {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
   }
 
   .projects-intro {
     margin: 100px 0;
     max-width: 500px;
-  }
-
-  h2 {
-    font-weight: 500;
-    font-size: 30px;
   }
 
   .gatsby-image-wrapper {
@@ -38,12 +36,45 @@ const ProjectStyles = styled.div`
   overflow: hidden;
 
   .project-details {
-    padding: 1.5rem;
+    padding: 2rem 0;
+    max-width: 75%;
+
+    @media screen and (max-width: 700px) {
+      max-width: 100%;
+    }
   }
 
   .project-title {
-    font-weight: 500;
-    font-size: 23px;
+    font-weight: 600;
+    font-size: 28px;
+  }
+
+  .single-project:hover .project-link {
+    text-decoration: underline;
+  }
+
+  .single-project:hover .arrow {
+    padding: 0 8px;
+    transition: 1s;
+  }
+
+  .arrow {
+    padding: 0 4px;
+    font-size: 20px;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline;
+    transition: 1s;
+  }
+
+  .single-project:hover img {
+    transform: scale(1.05);
+    transition: 1s;
+  }
+
+  .single-project img {
+    transform: scale(1);
+    transition: 1s !important;
   }
 
 `;
@@ -51,16 +82,15 @@ const ProjectStyles = styled.div`
 function SingleProject( {project} ) {
   return (
     <ProjectStyles data-sal="fade-in" data-sal-easing="ease" data-sal-duration="1000">
-      <Link to={`/project/${project.slug.current}`}>
-        <Img style={{ height: "350px" }} objectFit="contain" fluid={project.image.asset.fluid} alt={project.name} fadeIn="true"/>
+      <Link to={`/project/${project.slug.current}`} className="single-project">
+        <Img style={{ height: "350px" }} objectFit="contain" fluid={project.image.asset.fluid} alt={project.name} />
+        <div className="project-details">
+          <h3 className="project-title">{project.name}</h3>
+          <p>{project.subtitle}</p>
+          <p className="project-link read-more-link">View Project</p>
+          <span className="arrow">›</span>
+        </div>
       </Link>
-      <div class="project-details">
-        <Link to={`/project/${project.slug.current}`}>
-          <h3 class="project-title">{project.name}</h3>
-        </Link>
-        <p>{project.subtitle}</p>
-        <p>View Project</p>
-      </div>
     </ProjectStyles>
   )
 }
@@ -68,11 +98,13 @@ function SingleProject( {project} ) {
 export default function ProjectList( {projects} ) {
   return (
     <ProjectGridStyles>
-      <div class="projects-intro">
-        <h2>Some Things I've Built</h2>
-        <p>I like to stay busy and always have something in the works. I often build applications using unfamiliar libraries and frameworks to keep up with the industry. Take a look at some of my personal and professional projects.</p>
+      <div className="projects-intro">
+        <h2>What I've been up to lately</h2>
+        <p>I like to stay busy and always have something in the works. I often build applications using unfamiliar libraries and frameworks to keep up with the industry. Take a look at some of my personal and professional projects.
+          
+        </p>
       </div>
-      <div class="project-grid">
+      <div className="project-grid">
         {projects.map(project => (
           <SingleProject key={project.id} project={project} />
         ))}

@@ -92,11 +92,11 @@ export default function Nav() {
       <ul>
       <Logo />
         <li>
-          <ul id="nav-right">
+          {/* <ul id="nav-right">
             <li><Link to="/projects">Projects</Link></li>
             <li><Link to="/about">About</Link></li>
             <li><Link to="/contact">Contact</Link></li>
-          </ul>
+          </ul> */}
         </li>
       </ul>
     </NavStyles>

@@ -16,6 +16,7 @@ const GlobalStyles = createGlobalStyle`
     font-family: 'Barlow', sans-serif;
     font-size: 16px;
     line-height: 1.5;
+    margin: 1rem 2rem;
   }
 
   fieldset {
@@ -23,14 +24,19 @@ const GlobalStyles = createGlobalStyle`
     border-width: 1px;
   }
 
+  .arrow {
+    padding: 0 4px;
+    font-size: 20px;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline;
+    transition: 1s;
+  }
+
   a {
     color: var(--black);
     text-decoration: none;
     cursor: pointer;
-
-    &:hover {
-      color: red;
-    }
   }
 
   strong {

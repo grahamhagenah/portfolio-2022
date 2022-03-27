@@ -11,8 +11,6 @@ const ContentStyles = styled.div`
   max-width: 1100px;
 `;
 
-
-
 export default function Layout( {children} ) {
   return (
     <>

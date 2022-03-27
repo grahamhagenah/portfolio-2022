@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const FooterStyles = styled.footer`
 
   footer {
-    margin-top: 100px;
+    margin-top: 175px;
   }
 
   ul {

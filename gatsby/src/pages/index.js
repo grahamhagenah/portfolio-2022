@@ -2,15 +2,20 @@ import * as React from 'react'
 import styled from 'styled-components'
 import ContactMe from '../components/ContactMe';
 import ProjectList from '../components/ProjectList';
+import Skills from '../components/Skills';
 
 const IntroStyles = styled.div`
 
   h1 {
-    font-size: 34px;
-    font-weight: 600;
-    padding: 175px 0 100px 0;
-    max-width: 500px;
+    font-size: 50px;
+    font-weight: 700;
+    padding: 10rem 0 8rem 0;
+    max-width: 650px;
     line-height: 1.25;
+
+    @media screen and (max-width: 700px) {
+      padding: 3rem 0 5rem 0;
+    }
   }
 
 `;
@@ -20,10 +25,15 @@ const InfoStyles = styled.div`
   ul {
     display: grid;
     list-style: none;
-    margin: 0 0 50px 0;
+    margin: 0 0 3rem 0;
     padding: 0;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 4rem;
+
+    @media screen and (max-width: 700px) {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
   }
 `;
 
@@ -32,23 +42,25 @@ export default function IndexPage( { data } ) {
   return (
     <>
       <IntroStyles data-sal="slide-up" data-sal-delay="200" data-sal-easing="ease" data-sal-duration="1000">
-        <h1>Hey! I'm Graham. I'm a Web Developer living in Los Angeles.</h1>
+        <h1>I'm Graham, a Web Developer living in Los Angeles.</h1>
       </IntroStyles>
       <InfoStyles>
         <ul>
           <li>
-            <p>I'm currently building front-end solutions for The Predictive Index, the industry leaders of talent optimization.</p>
+            <p>I currently work for a fast-growing company called <strong>The Predictive Index</strong>, leaders of the emerging industry of talent optimization.</p>
           </li>
           <li>
-            <p>I've built many accessible, performant websites for non-profit organizations, including schools, libraries, and art centers.</p>
+            <p>I've built websites for artists, authors, and small businesses, as well as non-profits like libraries, schools, community centers, and education foundations.</p>
           </li>
           <li>
-            <p>I write in HTML, CSS, Javascript, and PHP. My library of choice is React. My current interest is in static-site generators.</p>
+            <p>I'm an avid hiker, cyclist, climber, camper, and enthusiast of the outdoors. I also love playing narrative video games and discussing films.</p>
           </li>
         </ul>
       </InfoStyles>
-      <ContactMe boldText="Hire me!" text="I'm happy you made it here. Let's talk." buttonText="Say Hello"/>
+      <ContactMe boldText="" text="If you've made it here, I'm sure there's something we can chat about." buttonText="Send me a message"/>
+      <Skills />
       <ProjectList projects={projects} />
+      <ContactMe boldText="" text="If you've made it here, I'm sure there's something we can chat about." buttonText="Send me a message"/>
     </>
   )
 }

@@ -1,7 +1,7 @@
 {
-  "name": "slicks-slices-frontend",
+  "name": "portfolio-frontend",
   "private": true,
-  "description": "Slick Serves the Sweetest Slices",
+  "description": "Graham Hagenah's Portfolio",
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
@@ -23,6 +23,11 @@
     }
   },
   "dependencies": {
+    "@fontsource/barlow": "^4.5.5",
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "@fortawesome/react-fontawesome": "^0.1.18",
+    "babel-plugin-macros": "^3.1.0",
     "babel-plugin-styled-components": "^1.11.1",
     "dotenv": "^8.2.0",
     "gatsby": "^2.24.63",
@@ -34,6 +39,7 @@
     "gatsby-plugin-styled-components": "^3.3.10",
     "gatsby-source-filesystem": "^4.4.0",
     "gatsby-source-sanity": "^6.0.4",
+    "gatsby-transform-portable-text": "^0.0.2",
     "gatsby-transformer-sharp": "^4.4.0",
     "isomorphic-fetch": "^2.2.1",
     "netlify-cli": "^2.62.0",
@@ -42,6 +48,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^6.1.0",
+    "react-portable-text": "^0.4.3",
     "react-ztext": "^1.0.3",
     "styled-components": "^5.2.0"
   },
@@ -62,7 +69,6 @@
     "prettier": "^2.1.1"
   },
   "repository": {
-    "type": "git",
-    "url": "https://github.com/wesbos/slicks-slices"
+    "type": "git"
   }
 }
