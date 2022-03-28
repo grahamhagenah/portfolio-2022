@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import ContactMe from '../components/ContactMe';
 import ProjectList from '../components/ProjectList';
 import Skills from '../components/Skills';
+import { graphql } from 'gatsby'
 
 const IntroStyles = styled.div`
 
