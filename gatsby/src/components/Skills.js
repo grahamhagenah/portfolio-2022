@@ -9,6 +9,7 @@ import { FaReact } from 'react-icons/fa'
 import { FaDatabase } from 'react-icons/fa'
 import { FaUniversalAccess } from 'react-icons/fa'
 import { FaWordpress } from 'react-icons/fa'
+import Sparkles from './Sparkles';
 
 const SkillsStyles = styled.div`
 
@@ -17,7 +18,7 @@ const SkillsStyles = styled.div`
   }
 
   .skills p {
-    columns: 2;
+    max-width: 60%;
   }
 
   #skills-grid {
@@ -113,13 +114,11 @@ export default function Skills() {
   return (
     <SkillsStyles>
       <section className="skills">
-        <h2>More about my skills</h2>
-        <p>I made my first website back in 2017. It was a portfolio to host my digital artworks and vector animations. At the time, I was considering the visual arts 
-          as a career path post-college. I enjoyed spending time in the creative, hyper-detail-oriented world of graphic design. But I found that I enjoyed 
-          the process of developing the portfolio even more than I enjoyed creating the art to upload there. I was writing in barebones HTML and CSS. I made my first website back in 2017. It was a portfolio to host my digital artworks and vector animations. At the time, I was considering the visual arts as a career path post-college.
-        </p>
-        <a href="/about" id="about-me-link" className="read-more-link">Read more</a>
-        <span className="arrow">›</span>
+        <h2>Where I started</h2>
+        <p>In 2015, I was an aspiring <Sparkles>designer</Sparkles>. I made a website to show off my art, built with nothing but HTML & CSS. Simple as can be. But still it took weeks of experimentation before I got something live. I scoured the web for answers to all the basic questions. I learned about servers. Domain names. I wrote a heading tag. I tinkered with the CSS box model. Every discovery was a joy. Eventually my interest shifted from design to development. I decided to dive deeper into the creative possibilities of the web.
+</p>
+        {/* <a href="/about" id="about-me-link" className="read-more-link">Read more</a> */}
+        {/* <span className="arrow">›</span> */}
         <div id="skills-grid">
           <ul>
             <li data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease" data-sal-duration="1000"><FaHtml5 />HTML</li>

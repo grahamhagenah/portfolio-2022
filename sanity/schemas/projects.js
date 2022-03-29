@@ -42,7 +42,14 @@ export default {
       description: 'Date completed'
     },
     {
-      title: 'Text', 
+      title: 'Overview', 
+      name: 'overview',
+      type: 'array', 
+      description: 'Broad overview of project',
+      of: [{type: 'block'}]
+    },
+    {
+      title: 'Rich Text Content', 
       name: 'text',
       type: 'array', 
       description: 'Description of project process and details',
