@@ -38,6 +38,11 @@ export default function SingleProjectPage({ data: { project } }) {
           {/* <h1>HHHHHH</h1>
           <PortableText value={project.text._rawChildren}/> */}
         </section>
+        <section className="overview-2">
+          <PortableText value={project.overview} />
+          {/* <h1>HHHHHH</h1>
+          <PortableText value={project.text._rawChildren}/> */}
+        </section>
         <Img fluid={project.image.asset.fluid} alt=''></Img>
       </ProjectStyles>
     </div>
@@ -50,13 +55,8 @@ export const query = graphql`
       subtitle
       name 
       id
-      text {
-        _key
-        _type
-        style
-        list
-        _rawChildren
-      }
+      overview: _rawOverview(resolveReferences: {maxDepth: 5})
+      text: _rawText(resolveReferences: {maxDepth: 5})
       image {
         asset {
           fluid(maxWidth:800) {

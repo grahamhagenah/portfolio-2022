@@ -3,6 +3,8 @@ import React from 'react'
 import styled from 'styled-components';
 import Img from 'gatsby-image'
 
+let delay = 0;
+
 const ProjectGridStyles = styled.div`
 
   .project-grid {
@@ -80,18 +82,22 @@ const ProjectStyles = styled.div`
 `;
 
 function SingleProject( {project} ) {
+  //set increasing fade-in delay for each project
+  delay = delay + 1
   return (
-    <ProjectStyles data-sal="fade-in" data-sal-easing="ease" data-sal-duration="1000">
-      <Link to={`/project/${project.slug.current}`} className="single-project">
-        <Img style={{ height: "350px" }} objectFit="contain" fluid={project.image.asset.fluid} alt={project.name} />
-        <div className="project-details">
-          <h3 className="project-title">{project.name}</h3>
-          <p>{project.subtitle}</p>
-          <p className="project-link read-more-link">View Project</p>
-          <span className="arrow">›</span>
-        </div>
-      </Link>
-    </ProjectStyles>
+    <>
+      <ProjectStyles data-sal="fade-in" data-sal-easing="ease" data-sal-duration="1000" data-sal-delay={100 * delay}>
+        <Link to={`/project/${project.slug.current}`} className="single-project">
+          <Img style={{ height: "350px" }} objectFit="contain" fluid={project.image.asset.fluid} alt={project.name} />
+          <div className="project-details">
+            <h3 className="project-title">{project.name}</h3>
+            <p>{project.subtitle}</p>
+            <p className="project-link read-more-link">View Project</p>
+            <span className="arrow">›</span>
+          </div>
+        </Link>
+      </ProjectStyles>
+    </>
   )
 }
 

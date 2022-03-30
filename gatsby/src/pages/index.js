@@ -4,6 +4,7 @@ import ContactMe from '../components/ContactMe';
 import ProjectList from '../components/ProjectList';
 import Skills from '../components/Skills';
 import { graphql } from 'gatsby'
+import Sparkles from '../components/Sparkles';
 
 const IntroStyles = styled.div`
 
@@ -43,7 +44,7 @@ export default function IndexPage( { data } ) {
   return (
     <>
       <IntroStyles data-sal="slide-up" data-sal-delay="200" data-sal-easing="ease" data-sal-duration="1000">
-        <h1>I'm Graham, a Web Developer living in Los Angeles.</h1>
+        <h1>I'm Graham, a <Sparkles>Web Developer</Sparkles> living in Los Angeles.</h1>
       </IntroStyles>
       <InfoStyles>
         <ul>
@@ -54,11 +55,11 @@ export default function IndexPage( { data } ) {
             <p>I've built websites for artists, authors, and small businesses, as well as non-profits like libraries, schools, community centers, and education foundations.</p>
           </li>
           <li>
-            <p>I'm an avid hiker, cyclist, climber, camper, and enthusiast of the outdoors. I also love playing narrative video games and discussing films.</p>
+            <p>I enjoy spending time outdoors hiking, cycling, climbing, and watching sunsets. I also love playing video games and discussing films.</p>
           </li>
         </ul>
       </InfoStyles>
-      <ContactMe boldText="" text="If you've made it here, I'm sure there's something we can chat about." buttonText="Send me a message"/>
+      <ContactMe boldText="Let's talk!" text="Do you want to colloborate on a web project?" buttonText="Send me a message"/>
       <Skills />
       <ProjectList projects={projects} />
       <ContactMe boldText="" text="If you've made it here, I'm sure there's something we can chat about." buttonText="Send me a message"/>

@@ -8,6 +8,10 @@ const ContactMeStyles = styled.div`
     margin: 0;
   }
 
+  strong {
+    padding: 0 5px;
+  }
+
   .callout {
     margin: 0;
     text-align: left;

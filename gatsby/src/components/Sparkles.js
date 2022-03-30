@@ -2,6 +2,8 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import { keyframes } from "styled-components"
 
+// I have to credit Josh Comeau for the Animated Sparkles tutorial! https://www.joshwcomeau.com/react/animated-sparkles-in-react/
+
 const range = (start, end, step = 1) => {
     let output = [];
     if (typeof end === 'undefined') {
@@ -76,13 +78,13 @@ const useRandomInterval = (callback, minDelay, maxDelay) => {
   return cancel;
 };
 
-const DEFAULT_COLOR = '#FFC700';
+const DEFAULT_COLOR = '#FFE600';
 const generateSparkle = color => {
   const sparkle = {
     id: String(random(10000, 99999)),
     createdAt: Date.now(),
     color,
-    size: random(10, 20),
+    size: random(10, 30),
     style: {
       top: random(0, 100) + '%',
       left: random(0, 100) + '%',
@@ -125,7 +127,8 @@ const Sparkles = ({ color = DEFAULT_COLOR, children, ...delegated }) => {
 };
 const Sparkle = ({ size, color, style }) => {
   const path =
-    'M26.5 25.5C19.0043 33.3697 0 34 0 34C0 34 19.1013 35.3684 26.5 43.5C33.234 50.901 34 68 34 68C34 68 36.9884 50.7065 44.5 43.5C51.6431 36.647 68 34 68 34C68 34 51.6947 32.0939 44.5 25.5C36.5605 18.2235 34 0 34 0C34 0 33.6591 17.9837 26.5 25.5Z';
+    // 'M26.5 25.5C19.0043 33.3697 0 34 0 34C0 34 19.1013 35.3684 26.5 43.5C33.234 50.901 34 68 34 68C34 68 36.9884 50.7065 44.5 43.5C51.6431 36.647 68 34 68 34C68 34 51.6947 32.0939 44.5 25.5C36.5605 18.2235 34 0 34 0C34 0 33.6591 17.9837 26.5 25.5Z';
+    'M55.818,21.578c-0.118-0.362-0.431-0.626-0.808-0.681L36.92,18.268L28.83,1.876c-0.168-0.342-0.516-0.558-0.896-0.558 s-0.729,0.216-0.896,0.558l-8.091,16.393l-18.09,2.629c-0.377,0.055-0.689,0.318-0.808,0.681c-0.117,0.361-0.02,0.759,0.253,1.024 l13.091,12.76l-3.091,18.018c-0.064,0.375,0.09,0.754,0.397,0.978c0.309,0.226,0.718,0.255,1.053,0.076l16.182-8.506l16.18,8.506 c0.146,0.077,0.307,0.115,0.466,0.115c0.207,0,0.413-0.064,0.588-0.191c0.308-0.224,0.462-0.603,0.397-0.978l-3.09-18.017 l13.091-12.761C55.838,22.336,55.936,21.939,55.818,21.578z';
   return (
     <SparkleWrapper style={style}>
       <SparkleSvg width={size} height={size} viewBox="0 0 68 68" fill="none">

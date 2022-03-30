@@ -22,7 +22,7 @@ const SkillsStyles = styled.div`
   }
 
   #skills-grid {
-    margin: 5rem 0;
+    margin: 10rem 0;
   }
 
   #skills-grid li:nth-child(1) {
@@ -115,7 +115,7 @@ export default function Skills() {
     <SkillsStyles>
       <section className="skills">
         <h2>Where I started</h2>
-        <p>In 2015, I was an aspiring <Sparkles>designer</Sparkles>. I made a website to show off my art, built with nothing but HTML & CSS. Simple as can be. But still it took weeks of experimentation before I got something live. I scoured the web for answers to all the basic questions. I learned about servers. Domain names. I wrote a heading tag. I tinkered with the CSS box model. Every discovery was a joy. Eventually my interest shifted from design to development. I decided to dive deeper into the creative possibilities of the web.
+        <p>In 2015, I was an aspiring designer. I made a website to show off my art, built with nothing but HTML & CSS. Simple as can be. But still it took weeks of experimentation before I got something live. I scoured the web for answers to all the basic questions. I learned about servers. Domain names. I wrote a heading tag. I tinkered with the CSS box model. Every discovery was a joy. Eventually my interest shifted from design to development. I decided to dive deeper into the creative possibilities of the web.
 </p>
         {/* <a href="/about" id="about-me-link" className="read-more-link">Read more</a> */}
         {/* <span className="arrow">›</span> */}

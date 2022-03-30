@@ -45,11 +45,11 @@ export default {
       title: 'Overview', 
       name: 'overview',
       type: 'array', 
-      description: 'Broad overview of project',
+      description: 'Overview of project',
       of: [{type: 'block'}]
     },
     {
-      title: 'Rich Text Content', 
+      title: 'Full Description', 
       name: 'text',
       type: 'array', 
       description: 'Description of project process and details',
