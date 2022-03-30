@@ -16016,7 +16016,7 @@
   "resolved" "https://registry.npmjs.org/type-of/-/type-of-2.0.1.tgz"
   "version" "2.0.1"
 
-"type@^1.0.1":
+"type@^1.0.1", "type@module":
   "integrity" "sha512-+5nt5AAniqsCnu2cEQQdpzCAh33kVx8n0VoFidKpB1dVVLAN/F+bgVOqOJqOnEnrhp222clB5p3vUlD+1QAnfg=="
   "resolved" "https://registry.npmjs.org/type/-/type-1.2.0.tgz"
   "version" "1.2.0"
