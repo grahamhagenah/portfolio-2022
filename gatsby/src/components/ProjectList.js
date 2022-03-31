@@ -20,9 +20,9 @@ const ProjectGridStyles = styled.div`
 
   .projects-intro {
     margin: 100px 0;
-    max-width: 500px;
+    max-width: 60%;
   }
-
+  
   .gatsby-image-wrapper {
     max-height: 300px;
     border-radius: 5px;
