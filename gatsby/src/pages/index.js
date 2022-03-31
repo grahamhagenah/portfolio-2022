@@ -55,7 +55,7 @@ export default function IndexPage( { data } ) {
             <p>I've built websites for artists, authors, and small businesses, as well as non-profits like libraries, schools, community centers, and education foundations.</p>
           </li>
           <li>
-            <p>I enjoy spending time outdoors hiking, cycling, climbing, and watching sunsets. I also love playing video games and discussing films.</p>
+            <p>Lorem ipsum, something about my outdoor activities, what I like to do for fun, etc.</p>
           </li>
         </ul>
       </InfoStyles>
