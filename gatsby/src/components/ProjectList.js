@@ -70,12 +70,12 @@ const ProjectStyles = styled.div`
   }
 
   .single-project:hover img {
-    transform: scale(1.05);
+    transform: scale(1.3);
     transition: 1s;
   }
 
   .single-project img {
-    transform: scale(1);
+    transform: scale(1.25);
     transition: 1s !important;
   }
 

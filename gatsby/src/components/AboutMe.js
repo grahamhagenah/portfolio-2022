@@ -9,7 +9,6 @@ import { FaReact } from 'react-icons/fa'
 import { FaDatabase } from 'react-icons/fa'
 import { FaUniversalAccess } from 'react-icons/fa'
 import { FaWordpress } from 'react-icons/fa'
-import Sparkles from './Sparkles';
 
 const SkillsStyles = styled.div`
 
@@ -104,22 +103,20 @@ const SkillsStyles = styled.div`
     @media screen and (max-width: 700px) {
       display: block;
       margin: 2rem auto;
-      max-width: 250px;
+      max-width: 200px;
     }
   }
 
 `;
 
-export default function Skills() {
+export default function AboutMe() {
   return (
     <SkillsStyles>
       <section className="skills">
-        <h2>A bit about my skillset</h2>
-        <p>I'm a design-minded 
-          In 2019, I got a job at a small agency developing websites for non-profits in the greater Boston area. I learned the full stack during my time there - how to make a great website from pitch meeting to final deploy. Everything from setting up a Linux server to replicating a complex layout in CSS Grid to writing custom form validation in JavaScript. I made meaningful connections with wonderful clients (teachers, librarians, authors, artists, nurses) and learned how to listen deeply to all of their concerns and aspirations.
-        </p>
-        <a href="/about" id="about-me-link" className="read-more-link">Read more about me</a>
-        <span className="arrow">›</span>
+        <h2>Where I started</h2>
+        <p>Lorem ipsum something about where I started, what I like about web development, etc.</p>
+        {/* <a href="/about" id="about-me-link" className="read-more-link">Read more</a> */}
+        {/* <span className="arrow">›</span> */}
         <div id="skills-grid">
           <ul>
             <li data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease" data-sal-duration="1000"><FaHtml5 />HTML</li>
@@ -127,10 +124,15 @@ export default function Skills() {
             <li data-sal="slide-up" data-sal-delay="200" data-sal-easing="ease" data-sal-duration="1000"><SiJavascript />JavaScript</li>
             <li data-sal="slide-up" data-sal-delay="250" data-sal-easing="ease" data-sal-duration="1000"><FaReact />React</li>
             <li data-sal="slide-up" data-sal-delay="300" data-sal-easing="ease" data-sal-duration="1000"><FaDatabase />PHP & MySQL</li>
-            {/* <li data-sal="slide-up" data-sal-delay="350" data-sal-easing="ease" data-sal-duration="1000"><FaWordpress />WordPress</li> */}
+            <li data-sal="slide-up" data-sal-delay="350" data-sal-easing="ease" data-sal-duration="1000"><FaWordpress />WordPress</li>
             <li data-sal="slide-up" data-sal-delay="400" data-sal-easing="ease" data-sal-duration="1000"><FaUniversalAccess />Accessibility</li>
           </ul>
         </div>
+      </section>
+      <section className="skills-2">
+        <h2>More about my skillset</h2>
+        <p>In 2019, I got a job at a small agency developing websites for non-profits in the greater Boston area. I learned the full stack during my time there - how to make a great website from pitch meeting to final deploy. Everything from setting up a Linux server to replicating a complex layout in CSS Grid to writing custom form validation in JavaScript. I made meaningful connections with wonderful clients (teachers, librarians, authors, artists, nurses) and learned how to listen deeply to all of their concerns and aspirations.
+        </p>
       </section>
     </SkillsStyles>
   )

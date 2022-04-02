@@ -42,11 +42,23 @@ export default {
       description: 'Date completed'
     },
     {
+      name: 'url',
+      title: 'URL',
+      type: 'url',
+      description: 'URL of project'
+    },
+    {
       title: 'Overview', 
       name: 'overview',
       type: 'array', 
       description: 'Overview of project',
       of: [{type: 'block'}]
+    },
+    {
+      title: 'Stack',
+      name: 'stack',
+      type: 'array',
+      of: [{type: 'string'}]
     },
     {
       title: 'Full Description', 

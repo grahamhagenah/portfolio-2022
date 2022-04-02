@@ -3,13 +3,14 @@ import Img from 'gatsby-image'
 import styled from 'styled-components'
 import { graphql } from 'gatsby'
 import {PortableText} from '@portabletext/react'
+import Browser from '../assets/images/browser.svg'
 
 const IntroStyles = styled.div`
 
   h1 {
     font-size: 50px;
     font-weight: 700;
-    padding: 175px 0 50px 0;
+    padding: 10rem 0 5rem 0;
     max-width: 650px;
     line-height: 1.25;
 
@@ -22,8 +23,49 @@ const IntroStyles = styled.div`
 
 const ProjectStyles = styled.div`
   .overview {
-    max-width: 800px;
+    max-width: 60%;
   }
+
+  .project-button-links {
+    margin-bottom: 4rem;
+  }
+
+  .browser-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .gatsby-image-wrapper {
+    border-radius: 0 0 10px 10px;
+  }
+
+  .browser-view {
+    margin: 5rem 0;
+    border: 2px solid white;
+    transition: .25s;
+    border-radius: 10px;
+
+    :hover {
+      cursor: pointer;
+      border: 2px solid var(--black);
+      
+      #project-url {
+      color: var(--black);
+    }
+  }
+
+  #project-url {
+    position: absolute;
+    margin: 0;
+    font-size: 14px;
+    color: var(--grey);
+
+    @media screen and (max-width: 700px) {
+      font-size: .7rem;
+    }
+  }
+
 `;
 
 export default function SingleProjectPage({ data: { project } }) {
@@ -33,17 +75,24 @@ export default function SingleProjectPage({ data: { project } }) {
         <h1>{project.name}</h1>
       </IntroStyles>
       <ProjectStyles>
+        <div className="project-button-links">
+          <button className="mr">View code</button>
+          <button>View Site</button>
+        </div>
         <section className="overview">
           <PortableText value={project.text} />
-          {/* <h1>HHHHHH</h1>
-          <PortableText value={project.text._rawChildren}/> */}
+          <h3>Stack:</h3>
         </section>
         <section className="overview-2">
           <PortableText value={project.overview} />
-          {/* <h1>HHHHHH</h1>
-          <PortableText value={project.text._rawChildren}/> */}
         </section>
-        <Img fluid={project.image.asset.fluid} alt=''></Img>
+        <div className="browser-view">
+          <div className="browser-top">
+            <p id="project-url">{project.url}</p>
+            <img className="browser-graphic" src={Browser} alt="" />
+          </div>
+          <Img fluid={project.image.asset.fluid} alt=''></Img>
+        </div>
       </ProjectStyles>
     </div>
   )
@@ -54,7 +103,9 @@ export const query = graphql`
     project: sanityProjects(slug: { current: { eq: $slug} }) {
       subtitle
       name 
+      url
       id
+      stack
       overview: _rawOverview(resolveReferences: {maxDepth: 5})
       text: _rawText(resolveReferences: {maxDepth: 5})
       image {

@@ -1,10 +1,11 @@
 import { createGlobalStyle } from 'styled-components';
 
+
 const GlobalStyles = createGlobalStyle`
   :root {
     --black: #2E2E2E;
     --white: #fff;
-    --grey: #efefef;
+    --grey: #6f6f70;
     --blue: #e0eaf1;
   }
 
@@ -17,6 +18,43 @@ const GlobalStyles = createGlobalStyle`
     font-size: 16px;
     line-height: 1.5;
     margin: 1rem 2rem;
+  }
+
+  button {
+    text-decoration: none;
+    background: white;
+    color: var(--black);
+    border: 2px solid var(--black);
+    border-radius: 5px;
+    padding: 5px 20px;
+    height: 100%;
+    font-weight: 500;
+    align-items: center;
+  }
+
+  button:hover {
+    background: var(--black);
+    color: white;
+  }
+
+  .mr {
+    margin-right: 2rem;
+  }
+
+  .ml {
+    margin-left: 2rem;
+  }
+
+  h1 {
+    font-size: 50px;
+    font-weight: 700;
+    padding: 10rem 0 8rem 0;
+    max-width: 650px;
+    line-height: 1.25;
+
+    @media screen and (max-width: 700px) {
+      padding: 3rem 0 5rem 0;
+    }
   }
 
   fieldset {
@@ -37,6 +75,18 @@ const GlobalStyles = createGlobalStyle`
     color: var(--black);
     text-decoration: none;
     cursor: pointer;
+  }
+
+  .link {
+    border-bottom: .05em solid #e0eaf1;
+    box-shadow: inset 0 -0.05em 0 #e0eaf1;
+    color: inherit;
+    transition: background-color .25s cubic-bezier(.33, .66, .66, 1);
+    text-decoration: none;
+  }
+
+  .link:hover, .link:focus, .link:active {
+    background-color: #e0eaf1;
   }
 
   strong {
