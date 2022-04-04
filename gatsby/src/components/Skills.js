@@ -21,39 +21,39 @@ const SkillsStyles = styled.div`
     max-width: 60%;
   }
 
-  #skills-grid {
+  .skills-grid {
     margin: 10rem 0;
   }
 
-  #skills-grid li:nth-child(1) {
+  .skills-grid li:nth-child(1) {
     background-color: #e8940038;
   }
 
-  #skills-grid li:nth-child(2) {
+  .skills-grid li:nth-child(2) {
     background-color: #d0331438;
   }
 
-  #skills-grid li:nth-child(3) {
+  .skills-grid li:nth-child(3) {
     background-color: #8ed01438;
   }
 
-  #skills-grid li:nth-child(4) {
+  .skills-grid li:nth-child(4) {
     background-color: #14d0a338;
   }
 
-  #skills-grid li:nth-child(5) {
+  .skills-grid li:nth-child(5) {
     background-color: #1420d038;
   }
 
-  #skills-grid li:nth-child(6) {
+  .skills-grid li:nth-child(6) {
     background-color: #b414d038;
   }
 
-  #skills-grid li:nth-child(7) {
+  .skills-grid li:nth-child(7) {
     background-color: #e0eaf1;
   }
 
-  #skills-grid ul {
+  .skills-grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -64,7 +64,7 @@ const SkillsStyles = styled.div`
     }
   }
 
-  #skills-grid li:hover {
+  .skills-grid li:hover {
     transform: scale(1.05);
     transition: .5s;
   }
@@ -110,28 +110,68 @@ const SkillsStyles = styled.div`
 
 `;
 
-export default function Skills() {
+
+export default function Skills(props) {
+
+  let stack = props.stack
+
+  if(stack == undefined) {
+    stack = [];
+  }
+    
   return (
     <SkillsStyles>
-      <section className="skills">
-        <h2>A bit about my skillset</h2>
-        <p>I'm a design-minded 
-          In 2019, I got a job at a small agency developing websites for non-profits in the greater Boston area. I learned the full stack during my time there - how to make a great website from pitch meeting to final deploy. Everything from setting up a Linux server to replicating a complex layout in CSS Grid to writing custom form validation in JavaScript. I made meaningful connections with wonderful clients (teachers, librarians, authors, artists, nurses) and learned how to listen deeply to all of their concerns and aspirations.
-        </p>
-        <a href="/about" id="about-me-link" className="read-more-link">Read more about me</a>
-        <span className="arrow">›</span>
-        <div id="skills-grid">
-          <ul>
-            <li data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease" data-sal-duration="1000"><FaHtml5 />HTML</li>
-            <li data-sal="slide-up" data-sal-delay="150" data-sal-easing="ease" data-sal-duration="1000"><FaCss3Alt />CSS</li>
-            <li data-sal="slide-up" data-sal-delay="200" data-sal-easing="ease" data-sal-duration="1000"><SiJavascript />JavaScript</li>
-            <li data-sal="slide-up" data-sal-delay="250" data-sal-easing="ease" data-sal-duration="1000"><FaReact />React</li>
-            <li data-sal="slide-up" data-sal-delay="300" data-sal-easing="ease" data-sal-duration="1000"><FaDatabase />PHP & MySQL</li>
-            {/* <li data-sal="slide-up" data-sal-delay="350" data-sal-easing="ease" data-sal-duration="1000"><FaWordpress />WordPress</li> */}
-            <li data-sal="slide-up" data-sal-delay="400" data-sal-easing="ease" data-sal-duration="1000"><FaUniversalAccess />Accessibility</li>
-          </ul>
-        </div>
-      </section>
+        <ul className="skills-grid">
+          { (stack.includes('HTML') || props.showAll) && <SkillHtml /> }
+          { (stack.includes('CSS') || props.showAll) && <SkillCss /> }
+          { (stack.includes('JavaScript') || props.showAll) && <SkillJs /> }
+          { (stack.includes('React') || props.showAll) && <SkillReact /> }
+          { (stack.includes('PHP & MySQL') || props.showAll) && <SkillPhp /> }
+          { (stack.includes('WordPress') || props.showAll) && <SkillWordpress /> }
+          { (stack.includes('Accessibility') || props.showAll) && <SkillA11y /> }
+        </ul>
     </SkillsStyles>
+  )
+}
+
+function SkillHtml() {
+  return (
+    <li data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease" data-sal-duration="1000"><FaHtml5 />HTML</li>
+  )
+}
+
+function SkillCss() {
+  return (
+    <li data-sal="slide-up" data-sal-delay="150" data-sal-easing="ease" data-sal-duration="1000"><FaCss3Alt />CSS</li>
+  )
+}
+
+function SkillJs() {
+  return (
+    <li data-sal="slide-up" data-sal-delay="200" data-sal-easing="ease" data-sal-duration="1000"><SiJavascript />JavaScript</li>
+  )
+}
+
+function SkillReact() {
+  return (
+    <li data-sal="slide-up" data-sal-delay="250" data-sal-easing="ease" data-sal-duration="1000"><FaReact />React</li>
+  )
+}
+
+function SkillPhp() {
+  return (
+    <li data-sal="slide-up" data-sal-delay="300" data-sal-easing="ease" data-sal-duration="1000"><FaDatabase />PHP & MySQL</li>
+  )
+}
+
+function SkillWordpress() {
+  return (
+    <li data-sal="slide-up" data-sal-delay="350" data-sal-easing="ease" data-sal-duration="1000"><FaWordpress />WordPress</li>
+  )
+}
+
+function SkillA11y() {
+  return (
+    <li data-sal="slide-up" data-sal-delay="400" data-sal-easing="ease" data-sal-duration="1000"><FaUniversalAccess />Accessibility</li>
   )
 }

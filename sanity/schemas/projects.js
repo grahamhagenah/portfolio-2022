@@ -66,6 +66,20 @@ export default {
       type: 'array', 
       description: 'Description of project process and details',
       of: [{type: 'block'}]
+    },
+    {
+      title: 'Why I made this',
+      name: 'why',
+      type: 'array', 
+      description: 'Describe the purpose and goal',
+      of: [{type: 'block'}]
+    },
+    {
+      title: 'Stack Description',
+      name: 'stackDescription',
+      type: 'array', 
+      description: 'Explain the tech stack',
+      of: [{type: 'block'}]
     }
   ],
 };

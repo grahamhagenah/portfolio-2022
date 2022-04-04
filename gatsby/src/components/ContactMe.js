@@ -18,17 +18,6 @@ const ContactMeStyles = styled.div`
     padding: 0 5px;
   }
 
-  @keyframes gradientBG {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
 
   .callout {
     margin: 0;
@@ -44,8 +33,9 @@ const ContactMeStyles = styled.div`
     margin: 10rem 0 15rem 0;
     background-size: 400% 400%;
     background: linear-gradient(-45deg, rgba(238, 119, 82, 0.1), rgba(231, 61, 127, 0.1), rgba(35, 166, 213, 0.1), rgba(35, 213, 171, 0.1));
-    animation: gradientBG 15s ease infinite;
+    animation: gradientBG 1s ease infinite;
 
+    
     @media screen and (max-width: 700px) {
       justify-content: center;
       text-align: center;

@@ -38,6 +38,10 @@ const InfoStyles = styled.div`
       gap: 0;
     }
   }
+
+  .skills {
+    max-width: 60%;
+  }
 `;
 
 export default function IndexPage( { data } ) {
@@ -62,7 +66,15 @@ export default function IndexPage( { data } ) {
         </ul>
       </InfoStyles>
       <ContactMe boldText="Let's talk!" text="Do you want to collaborate on a web project?" buttonText="Send me a message"/>
-      <Skills />
+      <InfoStyles>
+        <section className="skills">
+          <h2>A bit about my skillset</h2>
+          <p>In 2019, I got a job at a small agency developing websites for non-profits in the greater Boston area. I learned the full stack during my time there - how to make a great website from pitch meeting to final deploy. Everything from setting up a Linux server to replicating a complex layout in CSS Grid to writing custom form validation in JavaScript. I made meaningful connections with wonderful clients (teachers, librarians, authors, artists, nurses) and learned how to listen deeply to all of their concerns and aspirations.</p>
+          <a href="/about" id="about-me-link" className="read-more-link">Read more about me</a>
+          <span className="arrow">›</span>
+        </section>
+      </InfoStyles>
+      <Skills showAll />
       {/* <AboutMe /> */}
       <ProjectList projects={projects} />
       <ContactMe boldText="Let me know!" text="I wonder what we have in common that led you here." buttonText="Send me a message"/>

@@ -37,8 +37,12 @@ const GlobalStyles = createGlobalStyle`
     color: white;
   }
 
-  .mr {
+  .mr-2 {
     margin-right: 2rem;
+  }
+
+  .mr-1 {
+    margin-right: 1rem;
   }
 
   .ml {
@@ -55,6 +59,10 @@ const GlobalStyles = createGlobalStyle`
     @media screen and (max-width: 700px) {
       padding: 3rem 0 5rem 0;
     }
+  }
+
+  h3 {
+    font-weight: 500;
   }
 
   fieldset {
