@@ -30,6 +30,7 @@ const ProjectGridStyles = styled.div`
   .gatsby-image-wrapper {
     max-height: 300px;
     border-radius: 5px;
+    z-index: 1;
   }
 
   img {

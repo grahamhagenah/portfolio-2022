@@ -83,12 +83,12 @@ const ProjectStyles = styled.div`
     align-items: center;
   }
 
-  .gatsby-image-wrapper {
-    border-radius: 0 0 10px 10px;
-  }
-
   .project-overview {
     margin-bottom: 10rem;
+  }
+
+  .browser-graphic {
+    background-color: #f6f6f6;
   }
 
   .browser-view {
@@ -96,6 +96,7 @@ const ProjectStyles = styled.div`
     border: 2px solid white;
     transition: .25s;
     border-radius: 10px;
+    overflow: hidden;
 
     :hover {
       cursor: pointer;
@@ -109,11 +110,11 @@ const ProjectStyles = styled.div`
   #project-url {
     position: absolute;
     margin: 0;
-    font-size: 14px;
+    font-size: 1.5rem;
     color: var(--grey);
 
     @media screen and (max-width: 700px) {
-      font-size: .7rem;
+      font-size: 30%;
     }
   }
 `;
