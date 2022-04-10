@@ -1,7 +1,5 @@
-import { Link } from 'gatsby';
-import React from 'react'
+import React, { useState } from 'react';
 import styled from 'styled-components'
-import Img from 'gatsby-image'
 import { FaHtml5 } from 'react-icons/fa'
 import { FaCss3Alt } from 'react-icons/fa'
 import { SiJavascript } from 'react-icons/si'
@@ -9,7 +7,12 @@ import { FaReact } from 'react-icons/fa'
 import { FaDatabase } from 'react-icons/fa'
 import { FaUniversalAccess } from 'react-icons/fa'
 import { FaWordpress } from 'react-icons/fa'
-import Sparkles from './Sparkles';
+import { SiNetlify } from 'react-icons/si'
+import { SiGatsby } from 'react-icons/si'
+import { SiGraphql } from 'react-icons/si'
+import { SiCoderwall } from 'react-icons/si'
+
+let delay = 0;
 
 const SkillsStyles = styled.div`
 
@@ -19,38 +22,50 @@ const SkillsStyles = styled.div`
 
   .skills p {
     max-width: 60%;
+
+    @media screen and (max-width: 700px) {
+      max-width: 100%;
+    }
   }
 
   .skills-grid {
     margin: 10rem 0;
   }
 
-  .skills-grid li:nth-child(1) {
+  #html-skill {
     background-color: #e8940038;
   }
 
-  .skills-grid li:nth-child(2) {
+  #css-skill {
     background-color: #d0331438;
   }
 
-  .skills-grid li:nth-child(3) {
+  #javascript-skill  {
     background-color: #8ed01438;
   }
 
-  .skills-grid li:nth-child(4) {
+  #react-skill {
     background-color: #14d0a338;
   }
 
-  .skills-grid li:nth-child(5) {
+  #php-skill {
     background-color: #1420d038;
   }
 
-  .skills-grid li:nth-child(6) {
+  #wordpress-skill {
     background-color: #b414d038;
   }
 
-  .skills-grid li:nth-child(7) {
+  #accessibility-skill {
     background-color: #e0eaf1;
+  }
+
+  #netlify-skill {
+    background-color: #e0eaf1;
+  }
+
+  #graphql-skill {
+    background-color: #14d0a338;
   }
 
   .skills-grid {
@@ -110,68 +125,62 @@ const SkillsStyles = styled.div`
 
 `;
 
-
-export default function Skills(props) {
-
-  let stack = props.stack
-
-  if(stack == undefined) {
-    stack = [];
-  }
-    
+export default function SkillsList( {stack} ) {
   return (
     <SkillsStyles>
-        <ul className="skills-grid">
-          { (stack.includes('HTML') || props.showAll) && <SkillHtml /> }
-          { (stack.includes('CSS') || props.showAll) && <SkillCss /> }
-          { (stack.includes('JavaScript') || props.showAll) && <SkillJs /> }
-          { (stack.includes('React') || props.showAll) && <SkillReact /> }
-          { (stack.includes('PHP & MySQL') || props.showAll) && <SkillPhp /> }
-          { (stack.includes('WordPress') || props.showAll) && <SkillWordpress /> }
-          { (stack.includes('Accessibility') || props.showAll) && <SkillA11y /> }
-        </ul>
+      <ul className='skills-grid'>
+        {stack.map(skill => (
+          <SingleSkill skill={skill} key={skill} />
+        ))}
+      </ul>
     </SkillsStyles>
   )
 }
 
-function SkillHtml() {
-  return (
-    <li data-sal="slide-up" data-sal-delay="100" data-sal-easing="ease" data-sal-duration="1000"><FaHtml5 />HTML</li>
-  )
-}
+function SingleSkill( {skill} ) {
+  //set increasing fade-in delay for each project
+  delay = delay + 50
+  let id = skill.toLowerCase() + '-skill'
+  let icon
 
-function SkillCss() {
-  return (
-    <li data-sal="slide-up" data-sal-delay="150" data-sal-easing="ease" data-sal-duration="1000"><FaCss3Alt />CSS</li>
-  )
-}
+  switch(skill) {
+    case 'HTML':
+      icon = <FaHtml5 />
+      break;
+    case 'CSS':
+      icon = <FaCss3Alt />
+      break;
+    case 'JavaScript':
+      icon = <SiJavascript />
+      break;
+    case 'React':
+      icon = <FaReact />
+      break;
+    case 'PHP':
+      icon = <FaDatabase />
+      break;
+    case 'WordPress':
+      icon = <FaWordpress />
+      break;
+    case 'Accessibility':
+      icon = <FaUniversalAccess />
+      break;
+    case 'Netlify':
+      icon = <SiNetlify />
+      break;
+    case 'Gatsby':
+      icon = <SiGatsby />
+      break;
+    case 'GraphQL':
+      icon = <SiGraphql />
+      break;
+    default:
+      icon = <SiCoderwall />
+  }
 
-function SkillJs() {
   return (
-    <li data-sal="slide-up" data-sal-delay="200" data-sal-easing="ease" data-sal-duration="1000"><SiJavascript />JavaScript</li>
-  )
-}
-
-function SkillReact() {
-  return (
-    <li data-sal="slide-up" data-sal-delay="250" data-sal-easing="ease" data-sal-duration="1000"><FaReact />React</li>
-  )
-}
-
-function SkillPhp() {
-  return (
-    <li data-sal="slide-up" data-sal-delay="300" data-sal-easing="ease" data-sal-duration="1000"><FaDatabase />PHP & MySQL</li>
-  )
-}
-
-function SkillWordpress() {
-  return (
-    <li data-sal="slide-up" data-sal-delay="350" data-sal-easing="ease" data-sal-duration="1000"><FaWordpress />WordPress</li>
-  )
-}
-
-function SkillA11y() {
-  return (
-    <li data-sal="slide-up" data-sal-delay="400" data-sal-easing="ease" data-sal-duration="1000"><FaUniversalAccess />Accessibility</li>
+    <>
+      <li id={id} data-sal='slide-up' data-sal-delay={delay} data-sal-easing='ease' data-sal-duration='1000'>{icon}{skill}</li>
+    </>
   )
 }

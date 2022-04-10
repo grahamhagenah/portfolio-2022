@@ -50,6 +50,10 @@ const SkillsVertical = styled.div`
 const ProjectStyles = styled.div`
   .overview {
     max-width: 60%;
+
+    @media screen and (max-width: 700px) {
+      max-width: 100%;
+    }
   }
 
   .why {

@@ -18,6 +18,7 @@ const IntroStyles = styled.div`
 
     @media screen and (max-width: 700px) {
       padding: 3rem 0 5rem 0;
+      font-size: 30px;
     }
   }
 
@@ -41,6 +42,10 @@ const InfoStyles = styled.div`
 
   .skills {
     max-width: 60%;
+
+    @media screen and (max-width: 700px) {
+      max-width: 100%;
+    }
   }
 `;
 
@@ -49,7 +54,6 @@ export default function IndexPage( { data } ) {
   return (
     <>
       <IntroStyles data-sal="slide-up" data-sal-delay="200" data-sal-easing="ease" data-sal-duration="1000">
-        {/* <h1>I'm Graham, a <Sparkles>Web Developer</Sparkles> living in Los Angeles.</h1> */}
         <h1>I'm Graham, a Web Developer living in Los Angeles.</h1>
       </IntroStyles>
       <InfoStyles>
@@ -61,11 +65,11 @@ export default function IndexPage( { data } ) {
             <p>I've built websites for artists, authors, and small businesses, as well as non-profits like libraries, schools, and community centers.</p>
           </li>
           <li>
-            <p>When I'm not on the web, I'm watching sunsets from the mountains, cycling through the busy city streets, and raving about movies with friends.</p>
+            <p>When I'm not on the web, I'm climbing rocks, taking photos, cycling through the busy city streets, and raving about movies with friends.</p>
           </li>
         </ul>
       </InfoStyles>
-      <ContactMe boldText="Let's talk!" text="Do you want to collaborate on a web project?" buttonText="Send me a message"/>
+      <ContactMe boldText="Let's talk!" text="Want to make something together?" buttonText="Send me a message"/>
       <InfoStyles>
         <section className="skills">
           <h2>A bit about my skillset</h2>
@@ -74,7 +78,7 @@ export default function IndexPage( { data } ) {
           <span className="arrow">›</span>
         </section>
       </InfoStyles>
-      <Skills showAll />
+      <Skills stack={['HTML', 'CSS', 'JavaScript', 'React', 'PHP', 'WordPress', 'Accessibility']} />
       {/* <AboutMe /> */}
       <ProjectList projects={projects} />
       <ContactMe boldText="Let me know!" text="I wonder what we have in common that led you here." buttonText="Send me a message"/>

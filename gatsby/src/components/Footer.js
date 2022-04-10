@@ -18,7 +18,8 @@ const FooterStyles = styled.footer`
 
     li {
       &:nth-child(2):before,
-      &:nth-child(3):before {
+      &:nth-child(3):before,
+      &:nth-child(4):before {
         content: "/";
         padding: 0 15px;
         opacity: .25;
@@ -44,13 +45,16 @@ export default function Footer() {
             <a href="mailto:gwhagenah@gmail.com" rel="noreferrer" target="_blank">Email</a> 
           </li>
           <li>
-            <a href="https://www.linkedin.com/in/hagenah/" rel="noreferrer" target="_blank">Linkedin</a> 
+            <a href="https://www.linkedin.com/in/hagenah/" rel="noreferrer" target="_blank">LinkedIn</a> 
           </li>
           <li>
             <a href="/wp-content/uploads/2020/11/Graham-Hagenahs-Resume.pdf" rel="noreferrer" target="_blank">Resume</a>
           </li>
+          <li>
+            <a href="https://github.com/grahamhagenah/portfolio" rel="noreferrer" target="_blank">Source</a>
+          </li>
         </ul>
-        <p>Graham Hagenah © 2018 — {(new Date().getFullYear())}</p>
+        <p>Graham Hagenah © {(new Date().getFullYear())}</p>
       </footer>
     </FooterStyles>
   )

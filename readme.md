@@ -20,7 +20,7 @@ The site will be available at <http://localhost:8000/>
 
 # Making changes to the site content
 
-After making changes to the site content, from the Gatsby directory run the command:
+After making changes to the site content, from the Gatsby directory run the command: (is this actually needed?)
 
 `npm run build`
 

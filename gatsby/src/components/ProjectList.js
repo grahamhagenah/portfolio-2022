@@ -21,6 +21,10 @@ const ProjectGridStyles = styled.div`
   .projects-intro {
     margin: 100px 0;
     max-width: 60%;
+
+    @media screen and (max-width: 700px) {
+      max-width: 100%;
+    }
   }
   
   .gatsby-image-wrapper {
