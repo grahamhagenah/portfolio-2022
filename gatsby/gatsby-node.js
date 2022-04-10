@@ -24,7 +24,6 @@ async function turnProjectsIntoPages({ graphql, actions }) {
       path: `project/${project.slug.current}`,
       component: projectTemplate,
       context: {
-        graham: 'is cool',
         slug: project.slug.current
       }
     });

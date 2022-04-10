@@ -16,6 +16,15 @@ export default {
     `gatsby-transformer-sharp`, // Needed for dynamic images
     `gatsby-plugin-scroll-reveal`,
     {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Barlow\:200,300,400,500,600,700,800`
+        ],
+        display: 'block'
+      }
+    },
+    {
       // this is the name of the plugin you are adding
       resolve: 'gatsby-source-sanity',
       options: {

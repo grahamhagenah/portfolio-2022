@@ -1,10 +1,10 @@
 {
-  "name": "slicks-slices-backend",
+  "name": "portfolio-backend",
   "private": true,
   "version": "1.0.0",
   "description": "",
   "main": "package.json",
-  "author": "Wes Bos <wesbos@gmail.com>",
+  "author": "Graham Hagenah <gwhagenah@gmail.com>",
   "license": "UNLICENSED",
   "scripts": {
     "lint": "eslint .",
