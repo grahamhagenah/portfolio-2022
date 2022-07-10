@@ -18,6 +18,8 @@ You may need to log in if it's been a while:
 
 The site will be available at <http://localhost:8000/>
 
+Access site admin at https://grahamhagenah.sanity.studio/desk
+
 # Making changes to the site content
 
 After making changes to the site content, from the Gatsby directory run the command: (is this actually needed?)
