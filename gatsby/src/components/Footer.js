@@ -1,10 +1,15 @@
 import React from 'react'
 import styled from 'styled-components';
+import Resume from '../assets/documents/Graham-Hagenah-Resume.pdf'
 
 const FooterStyles = styled.footer`
 
   footer {
     margin-top: 175px;
+
+    @media screen and (max-width: 700px) {
+      margin-top: 8rem;
+    }
   }
 
   ul {
@@ -48,7 +53,7 @@ export default function Footer() {
             <a href="https://www.linkedin.com/in/hagenah/" rel="noreferrer" target="_blank">LinkedIn</a> 
           </li>
           <li>
-            <a href="/wp-content/uploads/2020/11/Graham-Hagenahs-Resume.pdf" rel="noreferrer" target="_blank">Resume</a>
+            <a href={Resume} rel="noreferrer" target="_blank">Resume</a>
           </li>
           <li>
             <a href="https://github.com/grahamhagenah/portfolio" rel="noreferrer" target="_blank">Source</a>

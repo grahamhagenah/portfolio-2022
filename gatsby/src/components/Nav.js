@@ -24,6 +24,10 @@ const NavStyles = styled.nav`
     transition: .25s;
   }
 
+  .sticky {
+    
+  }
+
 
   ul {
     margin: 0;

@@ -3,9 +3,7 @@ import styled from 'styled-components'
 import ContactMe from '../components/ContactMe';
 import ProjectList from '../components/ProjectList';
 import Skills from '../components/Skills';
-import AboutMe from '../components/AboutMe';
 import { graphql } from 'gatsby'
-import Sparkles from '../components/Sparkles';
 
 const IntroStyles = styled.div`
 
@@ -59,29 +57,26 @@ export default function IndexPage( { data } ) {
       <InfoStyles>
         <ul>
           <li>
-            <p>I currently work for a fast-growing company called <strong><a className="link" target="_blank" href="https://www.predictiveindex.com/">The Predictive Index</a></strong>, leaders of the emerging industry of talent optimization.</p>
+            <p>Most recently, I worked for an HR-tech company called <strong><a className="link" target="_blank" href="https://www.predictiveindex.com/">The Predictive Index</a></strong>, leaders of the emerging category of talent optimization.</p>
           </li>
           <li>
             <p>I've built websites for artists, authors, and small businesses, as well as non-profits like libraries, schools, and community centers.</p>
           </li>
           <li>
-            <p>When I'm not on the web, I'm climbing rocks, taking photos, cycling through the busy city streets, and raving about movies with friends.</p>
+            <p>When I'm not on the web, I'm climbing rockwalls, taking photos, cycling through the busy city streets, and raving about movies with friends.</p>
           </li>
         </ul>
       </InfoStyles>
       <ContactMe boldText="Let's talk!" text="Want to make something together?" buttonText="Send me a message"/>
       <InfoStyles>
         <section className="skills">
-          <h2>A bit about my skillset</h2>
-          <p>In 2019, I got a job at a small agency developing websites for non-profits in the greater Boston area. I learned the full stack during my time there - how to make a great website from pitch meeting to final deploy. Everything from setting up a Linux server to replicating a complex layout in CSS Grid to writing custom form validation in JavaScript. I made meaningful connections with wonderful clients (teachers, librarians, authors, artists, nurses) and learned how to listen deeply to all of their concerns and aspirations.</p>
-          <a href="/about" id="about-me-link" className="read-more-link">Read more about me</a>
-          <span className="arrow">›</span>
+          <h2>More about me</h2>
+          <p>I'm a frontend software engineer & freelance web developer with roots in design and digital marketing. I got my start developing bespoke websites in WordPress and have since ventured into building powerful applications with React. I reach for static-site generators like Gatsby when the project calls for speed, security, and discoverability. I've worked with librarians, teachers, writers, painters, and community leaders to build transformative digital solutions. I listen deeply and learn something new from every person I meet.</p>
         </section>
       </InfoStyles>
       <Skills stack={['HTML', 'CSS', 'JavaScript', 'React', 'PHP', 'WordPress', 'Accessibility']} />
-      {/* <AboutMe /> */}
       <ProjectList projects={projects} />
-      <ContactMe boldText="Let me know!" text="I wonder what we have in common that led you here." buttonText="Send me a message"/>
+      <ContactMe boldText="You should let me know!" text="I wonder what led you here." buttonText="Send me a message"/>
     </>
   )
 }

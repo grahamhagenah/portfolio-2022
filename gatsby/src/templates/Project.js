@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { graphql } from 'gatsby'
 import {PortableText} from '@portabletext/react'
 import Browser from '../assets/images/browser.svg'
+import BrowserMobile from '../assets/images/mobile-browser.svg'
 import Skills from '../components/Skills'
 
 const IntroStyles = styled.div`
@@ -27,6 +28,7 @@ const SkillsVertical = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 5rem;
 
   .skills-grid {
     display: grid;
@@ -56,13 +58,23 @@ const ProjectStyles = styled.div`
     }
   }
 
-  .why {
+  .section-1,
+  .section-4 {
     max-width: 60%;
+
+    @media screen and (max-width: 700px) {
+      max-width: 100%;
+    }
   }
 
-  .how {
+  .section-2,
+  .section-3 {
     display: grid;
     grid-template-columns: 1fr 1fr;
+
+    @media screen and (max-width: 700px) {
+      grid-template-columns: 1fr
+    }
   }
 
   .project-button-links {
@@ -75,6 +87,10 @@ const ProjectStyles = styled.div`
 
   .project-description section {
     margin: 13rem 0;
+
+    @media screen and (max-width: 700px) {
+      margin: 3rem 0;
+    }
   }
 
   .browser-top {
@@ -89,18 +105,53 @@ const ProjectStyles = styled.div`
 
   .browser-graphic {
     background-color: #f6f6f6;
+    width: 100%;
+  }
+
+  .browser-view-mobile {
+    max-width: 300px;
+    margin: 0 auto;
+
+    @media screen and (max-width: 700px) {
+      margin: 5rem auto;
+    }
   }
 
   .browser-view {
     margin: 10rem 0;
-    border: 2px solid white;
+
+    @media screen and (max-width: 700px) {
+      margin: 5rem 0;
+    }
+  }
+
+  .browser-view,
+  .browser-view-mobile {
+    
     transition: .25s;
     border-radius: 10px;
     overflow: hidden;
+    transform: scale(1);
+    box-shadow:
+      0.9px 1px 1.3px rgba(0, 0, 0, 0.024),
+      2.1px 2.5px 4.2px rgba(0, 0, 0, 0.032),
+      3.9px 4.6px 9.4px rgba(0, 0, 0, 0.037),
+      6.9px 8.3px 18.5px rgba(0, 0, 0, 0.041),
+      13px 15.5px 35.6px rgba(0, 0, 0, 0.045),
+      31px 37px 80px rgba(0, 0, 0, 0.06);
+
 
     :hover {
       cursor: pointer;
-      border: 2px solid var(--black);
+      box-shadow:
+        0.9px 2.7px 1.3px rgba(0, 0, 0, 0.024),
+        2.1px 6.5px 4.2px rgba(0, 0, 0, 0.032),
+        3.9px 12.3px 9.4px rgba(0, 0, 0, 0.037),
+        6.9px 21.9px 18.5px rgba(0, 0, 0, 0.041),
+        13px 40.9px 35.6px rgba(0, 0, 0, 0.045),
+        31px 98px 80px rgba(0, 0, 0, 0.06);
+      transform: scale(1.01);
+
       
       #project-url {
       color: var(--black);
@@ -134,11 +185,8 @@ let stack = project.stack
           <button>View Site</button>
         </div>
         <section className="overview">
-          <PortableText value={project.text} />
-          <h3><span className="mr-1">Stack: </span><strong>{project.stack.join('  +  ')}</strong></h3>
-        </section>
-        <section className="overview-2">
           <PortableText value={project.overview} />
+          <h3><span className="mr-1">Stack: </span><strong>{project.stack.join('  +  ')}</strong></h3>
         </section>
         <div className="browser-view">
           <div className="browser-top">
@@ -148,10 +196,10 @@ let stack = project.stack
           <Img fluid={project.image.asset.fluid} alt=''></Img>
         </div>
         <div className='project-description'>
-          <section className='why'>
+          <section className='section-1'>
             <PortableText value={project.why} />
           </section>
-          <section className='how'>
+          <section className='section-2'>
             <SkillsVertical>
               <Skills stack={stack} />
             </SkillsVertical>
@@ -159,13 +207,18 @@ let stack = project.stack
               <PortableText value={project.stackDescription} />
             </div>
           </section>
-          <section className='how'>
+          <section className='section-3'>
             <div className="stack-description">
               <PortableText value={project.stackDescription} />
             </div>
-
+            <div className="browser-view-mobile">
+              <div className="browser-top">
+                <img className="browser-graphic" src={BrowserMobile} alt="" />
+                </div>
+              <Img fluid={project.mobile.asset.fluid} alt=''></Img>
+            </div>
           </section>
-          <section className='why'>
+          <section className='section-4'>
             <PortableText value={project.why} />
           </section>
         </div>
@@ -189,6 +242,13 @@ export const query = graphql`
       image {
         asset {
           fluid(maxWidth:800) {
+            ...GatsbySanityImageFluid
+          }
+        }
+      }
+      mobile {
+        asset {
+          fluid(maxWidth:300) {
             ...GatsbySanityImageFluid
           }
         }

@@ -15,8 +15,8 @@ const GlobalStyles = createGlobalStyle`
 
   body {
     font-family: 'Barlow', sans-serif;
-    font-size: 16px;
-    line-height: 1.5;
+    font-size: 18px;
+    line-height: 2;
     margin: 1rem 2rem;
   }
 

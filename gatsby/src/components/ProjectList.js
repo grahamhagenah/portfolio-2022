@@ -44,10 +44,13 @@ const ProjectStyles = styled.div`
 
   .project-details {
     padding: 2rem 0;
-    max-width: 75%;
 
     @media screen and (max-width: 700px) {
       max-width: 100%;
+    }
+
+    p {
+      margin-top: 0;
     }
   }
 
@@ -62,7 +65,7 @@ const ProjectStyles = styled.div`
 
   .single-project:hover .arrow {
     padding: 0 8px;
-    transition: 1s;
+    transition: .25s;
   }
 
   .arrow {
@@ -71,17 +74,17 @@ const ProjectStyles = styled.div`
     font-weight: 700;
     text-decoration: none;
     display: inline;
-    transition: 1s;
+    transition: .25s;
   }
 
   .single-project:hover img {
     transform: scale(1.3);
-    transition: 1s;
+    transition: .25s;
   }
 
   .single-project img {
     transform: scale(1.25);
-    transition: 1s !important;
+    transition: .25s !important;
   }
 
 `;
@@ -110,7 +113,7 @@ export default function ProjectList( {projects} ) {
   return (
     <ProjectGridStyles>
       <div className="projects-intro">
-        <h2>What I've been up to lately</h2>
+        <h2>What I've been working on</h2>
         <p>I like to stay busy and always have something in the works. I often build applications using unfamiliar libraries and frameworks to keep up with the industry. Take a look at some of my personal and professional projects.
           
         </p>

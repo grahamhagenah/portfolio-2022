@@ -29,35 +29,42 @@ const SkillsStyles = styled.div`
   }
 
   .skills-grid {
-    margin: 10rem 0;
+    margin: 10rem 0 200px 0;
   }
 
   #html-skill {
     background-color: #e8940038;
+    background-color: #fef1ed;
   }
 
   #css-skill {
     background-color: #d0331438;
+    background-color: #feeff0;
   }
 
   #javascript-skill  {
     background-color: #8ed01438;
+    background-color: #fdecf3;
   }
 
   #react-skill {
     background-color: #14d0a338;
+    background-color: #f4f1f6;
   }
 
   #php-skill {
     background-color: #1420d038;
+    background-color: #edf5f9;
   }
 
   #wordpress-skill {
     background-color: #b414d038;
+    background-color: #ecf7f9;
   }
 
   #accessibility-skill {
     background-color: #e0eaf1;
+    background-color: #ecfaf7;
   }
 
   #netlify-skill {

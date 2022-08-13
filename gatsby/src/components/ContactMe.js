@@ -22,7 +22,6 @@ const ContactMeStyles = styled.div`
   .callout {
     margin: 0;
     text-align: left;
-    background-color: #e0eaf1;
     border-radius: 5px;
     display: block;
     padding: 10px 10px 10px 20px;
@@ -31,16 +30,21 @@ const ContactMeStyles = styled.div`
     flex-flow: wrap;
     line-height: 2;
     margin: 10rem 0 15rem 0;
-    background-size: 400% 400%;
     background: linear-gradient(-45deg, rgba(238, 119, 82, 0.1), rgba(231, 61, 127, 0.1), rgba(35, 166, 213, 0.1), rgba(35, 213, 171, 0.1));
-    animation: gradientBG 1s ease infinite;
 
     
-    @media screen and (max-width: 700px) {
-      justify-content: center;
-      text-align: center;
-      padding: 3rem 1rem;
-    }
+      @media screen and (max-width: 700px) {
+        justify-content: center;
+        text-align: center;
+        padding: 2rem;
+        margin: 5rem 0;
+      }
+
+      a {
+        @media screen and (max-width: 700px) {
+          width: 100%;
+        }
+      }
 
       button {
         display: block;
@@ -56,6 +60,7 @@ const ContactMeStyles = styled.div`
           grid-template-columns: 1fr;
           gap: 0;
           display: block;
+          width: 100%;
         }
 
         &:hover {
@@ -72,7 +77,7 @@ export default function ContactMe( {boldText, text, buttonText} ) {
   return (
     <ContactMeStyles>
       <div className="callout">
-        <p>{text} <strong>{boldText}</strong></p><Link to="/contact"><button>{buttonText}</button></Link>
+        <p>{text} <strong>{boldText}</strong></p><a href="mailto:gwhagenah@gmail.com" rel="noreferrer" target="_blank"><button>{buttonText}</button></a>
       </div>
     </ContactMeStyles>
   )
