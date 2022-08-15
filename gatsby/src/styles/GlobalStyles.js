@@ -22,19 +22,12 @@ const GlobalStyles = createGlobalStyle`
 
   button {
     text-decoration: none;
-    background: white;
-    color: var(--black);
     border: 2px solid var(--black);
     border-radius: 5px;
     padding: 5px 20px;
     height: 100%;
     font-weight: 500;
     align-items: center;
-  }
-
-  button:hover {
-    background: var(--black);
-    color: white;
   }
 
   .mr-2 {

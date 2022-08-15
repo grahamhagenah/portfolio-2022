@@ -32,7 +32,6 @@ const ContactMeStyles = styled.div`
     margin: 10rem 0 15rem 0;
     background: linear-gradient(-45deg, rgba(238, 119, 82, 0.1), rgba(231, 61, 127, 0.1), rgba(35, 166, 213, 0.1), rgba(35, 213, 171, 0.1));
 
-    
       @media screen and (max-width: 700px) {
         justify-content: center;
         text-align: center;
@@ -50,7 +49,7 @@ const ContactMeStyles = styled.div`
         display: block;
         text-decoration: none;
         background: white;
-        border: 1px solid var(--black);
+        color: var(--black);
         border-radius: 5px;
         padding: 5px 20px;
         height: 100%;
@@ -66,7 +65,6 @@ const ContactMeStyles = styled.div`
         &:hover {
           background: var(--black);
           color: white;
-          border: 1px solid #fff;
         }
       }
     }

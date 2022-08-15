@@ -79,6 +79,19 @@ const ProjectStyles = styled.div`
 
   .project-button-links {
     margin-bottom: 4rem;
+
+    button:hover {
+      background-color: var(--black);
+    }
+
+    button:hover a {
+      color: white;
+    }
+
+    button {
+      background-color: white;
+      color: var(--black);
+    }
   }
 
   .stack-description {
@@ -180,24 +193,35 @@ let stack = project.stack
         <h1>{project.name}</h1>
       </IntroStyles>
       <ProjectStyles>
-        <div className="project-button-links">
-          <button className="mr-2">View code</button>
-          <button>View Site</button>
-        </div>
+        {project.url !== null &&
+          <div className="project-button-links">
+            <button className="mr-2"><a target="_blank" href={project.source}>View code</a></button>
+            <button><a target="_blank" href={project.url}>View Site</a></button>
+          </div>
+        }
         <section className="overview">
           <PortableText value={project.overview} />
-          <h3><span className="mr-1">Stack: </span><strong>{project.stack.join('  +  ')}</strong></h3>
+          {project.type !== 'story' && 
+            <h3><span className="mr-1">Stack: </span><strong>{project.stack.join('  +  ')}</strong></h3>
+          }
         </section>
-        <div className="browser-view">
-          <div className="browser-top">
-            <p id="project-url">{project.url}</p>
-            <img className="browser-graphic" src={Browser} alt="" />
+        {project.type !== 'story' && 
+          <div className="browser-view">
+            <div className="browser-top">
+              <p id="project-url">{project.url}</p>
+              <img className="browser-graphic" src={Browser} alt="" />
+            </div>
+            <Img fluid={project.desktop.asset.fluid} alt=''></Img>
           </div>
-          <Img fluid={project.image.asset.fluid} alt=''></Img>
-        </div>
+        }
+        {project.type == 'story' && 
+          <div className="browser-view">
+            <Img fluid={project.image.asset.fluid} alt=''></Img>
+          </div>
+        }
         <div className='project-description'>
           <section className='section-1'>
-            <PortableText value={project.why} />
+            <PortableText value={project.text} />
           </section>
           <section className='section-2'>
             <SkillsVertical>
@@ -209,17 +233,16 @@ let stack = project.stack
           </section>
           <section className='section-3'>
             <div className="stack-description">
-              <PortableText value={project.stackDescription} />
+              <PortableText value={project.why} />
             </div>
-            <div className="browser-view-mobile">
-              <div className="browser-top">
-                <img className="browser-graphic" src={BrowserMobile} alt="" />
+            {project.type !== 'story' && 
+              <div className="browser-view-mobile">
+                <div className="browser-top">
+                  <img className="browser-graphic" src={BrowserMobile} alt="" />
                 </div>
-              <Img fluid={project.mobile.asset.fluid} alt=''></Img>
-            </div>
-          </section>
-          <section className='section-4'>
-            <PortableText value={project.why} />
+                <Img fluid={project.mobile.asset.fluid} alt=''></Img>
+              </div>
+            }
           </section>
         </div>
       </ProjectStyles>
@@ -233,6 +256,8 @@ export const query = graphql`
       subtitle
       name 
       url
+      source
+      type
       id
       stack
       overview: _rawOverview(resolveReferences: {maxDepth: 5})
@@ -240,6 +265,13 @@ export const query = graphql`
       why: _rawWhy(resolveReferences: {maxDepth: 5})
       stackDescription: _rawStackDescription (resolveReferences: {maxDepth: 5})
       image {
+        asset {
+          fluid(maxWidth:800) {
+            ...GatsbySanityImageFluid
+          }
+        }
+      }
+      desktop {
         asset {
           fluid(maxWidth:800) {
             ...GatsbySanityImageFluid

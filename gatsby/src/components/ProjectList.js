@@ -32,10 +32,6 @@ const ProjectGridStyles = styled.div`
     border-radius: 5px;
     z-index: 1;
   }
-
-  img {
-    max-height: 300px;
-  }
 `;
 
 const ProjectStyles = styled.div` 
@@ -78,12 +74,12 @@ const ProjectStyles = styled.div`
   }
 
   .single-project:hover img {
-    transform: scale(1.3);
+    transform: scale(1.05);
     transition: .25s;
   }
 
   .single-project img {
-    transform: scale(1.25);
+    transform: scale(1);
     transition: .25s !important;
   }
 
@@ -92,6 +88,10 @@ const ProjectStyles = styled.div`
 function SingleProject( {project} ) {
   //set increasing fade-in delay for each project
   delay = delay + 1
+  let isProject = true
+  if(project.type === 'story') {
+    isProject = false
+  }
   return (
     <>
       <ProjectStyles data-sal="fade-in" data-sal-easing="ease" data-sal-duration="1000" data-sal-delay={100 * delay}>
@@ -100,7 +100,8 @@ function SingleProject( {project} ) {
           <div className="project-details">
             <h3 className="project-title">{project.name}</h3>
             <p>{project.subtitle}</p>
-            <p className="project-link read-more-link">View Project</p>
+            <p className="project-link read-more-link">{isProject ? 'View Project' : 'Read Story'}</p>
+            {console.log(project.type)}
             <span className="arrow">›</span>
           </div>
         </Link>
@@ -114,7 +115,9 @@ export default function ProjectList( {projects} ) {
     <ProjectGridStyles>
       <div className="projects-intro">
         <h2>What I've been working on</h2>
-        <p>I like to stay busy and always have something in the works. I often build applications using unfamiliar libraries and frameworks to keep up with the industry. Take a look at some of my personal and professional projects.
+        <p>I stay busy with side projects to keep my skills sharp and learn unfamiliar libraries and frameworks. 
+          I love working with talented designers, but I don't shy away from creating graphics and web layouts myself. 
+          Take a look at some of my noteworthy personal and professional projects.
           
         </p>
       </div>

@@ -60,7 +60,7 @@ export default function IndexPage( { data } ) {
             <p>Most recently, I worked for an HR-tech company called <strong><a className="link" target="_blank" href="https://www.predictiveindex.com/">The Predictive Index</a></strong>, leaders of the emerging category of talent optimization.</p>
           </li>
           <li>
-            <p>I've built websites for artists, authors, and small businesses, as well as non-profits like libraries, schools, and community centers.</p>
+            <p>I've built websites for a wide variety of clients: artists, authors, and small businesses, as well as non-profits like libraries, schools, and community centers.</p>
           </li>
           <li>
             <p>When I'm not on the web, I'm climbing rockwalls, taking photos, cycling through the busy city streets, and raving about movies with friends.</p>
@@ -70,13 +70,12 @@ export default function IndexPage( { data } ) {
       <ContactMe boldText="Let's talk!" text="Want to make something together?" buttonText="Send me a message"/>
       <InfoStyles>
         <section className="skills">
-          <h2>More about me</h2>
-          <p>I'm a frontend software engineer & freelance web developer with roots in design and digital marketing. I got my start developing bespoke websites in WordPress and have since ventured into building powerful applications with React. I reach for static-site generators like Gatsby when the project calls for speed, security, and discoverability. I've worked with librarians, teachers, writers, painters, and community leaders to build transformative digital solutions. I listen deeply and learn something new from every person I meet.</p>
+          <h2>More about my skills</h2>
+          <p>I'm a frontend software engineer with roots in design and digital marketing. I focus on the user-facing end of websites — the visual interface — everything you see, click, drag, scroll through, and manipulate to get what you need. I build powerful, lightweight applications with libraries like React, as well as speedy, highly-discoverable static websites, and user-friendly, bespoke themes for content management systems like WordPress. </p>
         </section>
       </InfoStyles>
       <Skills stack={['HTML', 'CSS', 'JavaScript', 'React', 'PHP', 'WordPress', 'Accessibility']} />
       <ProjectList projects={projects} />
-      <ContactMe boldText="You should let me know!" text="I wonder what led you here." buttonText="Send me a message"/>
     </>
   )
 }
@@ -88,6 +87,7 @@ export const query = graphql`
         id
         name
         subtitle
+        type
         slug {
           current
         } 
