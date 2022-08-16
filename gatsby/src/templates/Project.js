@@ -28,7 +28,11 @@ const SkillsVertical = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 5rem;
+  margin-bottom: 0;
+
+  @media screen and (max-width: 700px) {
+    margin-bottom: 5rem;
+  }
 
   .skills-grid {
     display: grid;

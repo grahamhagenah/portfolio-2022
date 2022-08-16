@@ -53,6 +53,8 @@ const ProjectStyles = styled.div`
   .project-title {
     font-weight: 600;
     font-size: 28px;
+    line-height: 1.5;
+    margin-bottom: 1rem;
   }
 
   .single-project:hover .project-link {

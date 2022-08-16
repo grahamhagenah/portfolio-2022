@@ -94,6 +94,12 @@ const GlobalStyles = createGlobalStyle`
     font-weight: 600;
   }
 
+  code {
+    background-color: rgba(35,213,171,0.2);
+    margin: 0 1px;
+    padding: 0 3px;
+  }
+
   button {
     cursor: pointer;
   }
