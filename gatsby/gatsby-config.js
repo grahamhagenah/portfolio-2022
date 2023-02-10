@@ -4,7 +4,7 @@ dotenv.config({ path: '.env' });
 
 export default {
   siteMetadata: {
-    title: `Graham Hagenah`,
+    title: 'Graham Hagenah',
     siteUrl: `https://grahamhagenah.com`,
     description: `Graham's web projects`
   },

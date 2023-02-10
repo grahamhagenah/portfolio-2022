@@ -67,7 +67,7 @@ export default function IndexPage( { data } ) {
           </li>
         </ul>
       </InfoStyles>
-      <ContactMe boldText="Let's talk!" text="Want to make something together?" buttonText="Send me a message"/>
+      <ContactMe text="Want to make something together?" buttonText="Email me"/>
       <InfoStyles>
         <section className="skills">
           <h2>More about my skills</h2>

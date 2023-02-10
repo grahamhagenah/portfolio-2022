@@ -1,5 +1,6 @@
 import React from 'react'
 import Layout from './src/components/Layout'
+import { SEO } from "./src/components/seo"
 
 export function wrapPageElement({element, props}) {
   return ( 
@@ -18,3 +19,7 @@ export function wrapPageElement({element, props}) {
     </Layout>
   )
 }
+
+export const Head = () => (
+  <SEO />
+)
