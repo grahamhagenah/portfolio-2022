@@ -44,6 +44,7 @@ const SkillsVertical = styled.div`
       width: 150px;
       margin-left: auto;
       margin-right: auto;
+      background-color: #ededed;
     }
   }
 
