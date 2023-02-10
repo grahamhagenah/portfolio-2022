@@ -103,7 +103,6 @@ function SingleProject( {project} ) {
             <h3 className="project-title">{project.name}</h3>
             <p>{project.subtitle}</p>
             <p className="project-link read-more-link">{isProject ? 'View Project' : 'Read Story'}</p>
-            {console.log(project.type)}
             <span className="arrow">›</span>
           </div>
         </Link>
