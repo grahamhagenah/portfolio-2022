@@ -4,7 +4,6 @@ import { Link } from 'gatsby'
 
 
 const NavStyles = styled.nav`
-  margin-bottom: 5rem;
 
   #logo {
     height: 35px;

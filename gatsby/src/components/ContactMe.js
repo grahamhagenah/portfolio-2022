@@ -30,8 +30,8 @@ const ContactMeStyles = styled.div`
     flex-flow: wrap;
     line-height: 2;
     margin: 10rem 0 15rem 0;
-    background: linear-gradient(-45deg, rgba(238, 119, 82, 0.1), rgba(231, 61, 127, 0.1), rgba(35, 166, 213, 0.1), rgba(35, 213, 171, 0.1));
-
+    background-color: #f8f8f8;
+    
       @media screen and (max-width: 700px) {
         justify-content: center;
         text-align: center;

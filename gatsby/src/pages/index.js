@@ -8,7 +8,7 @@ import { graphql } from 'gatsby'
 const IntroStyles = styled.div`
 
   h1 {
-    font-size: 65px;
+    font-size: 70px;
     font-weight: 500;
     line-height: 1.25;
 

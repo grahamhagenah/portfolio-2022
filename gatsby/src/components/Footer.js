@@ -13,6 +13,7 @@ const FooterStyles = styled.footer`
   }
 
   ul {
+    font-size: 17px;
     margin: 0;
     padding: 0;
     display: flex;
@@ -53,10 +54,7 @@ export default function Footer() {
             <a href="https://www.linkedin.com/in/hagenah/" rel="noreferrer" target="_blank">LinkedIn</a> 
           </li>
           <li>
-            <a href={Resume} rel="noreferrer" target="_blank">Resume</a>
-          </li>
-          <li>
-            <a href="https://github.com/grahamhagenah/portfolio" rel="noreferrer" target="_blank">Source</a>
+            <a href="https://github.com/grahamhagenah/portfolio" rel="noreferrer" target="_blank">Source Code</a>
           </li>
         </ul>
         <p>Graham Hagenah © {(new Date().getFullYear())}</p>
