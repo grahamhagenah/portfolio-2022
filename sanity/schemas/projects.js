@@ -28,8 +28,35 @@ export default {
       },
     },
     {
+      name: 'type',
+      title: 'Project Type',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'Project', value: 'project' },
+          { title: 'Story', value: 'story' },
+        ],
+      },
+    },
+    {
       name: 'image',
-      title: 'Image',
+      title: 'Featured Image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    },
+    {
+      name: 'desktop',
+      title: 'Desktop View',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    },
+    {
+      name: 'mobile',
+      title: 'Mobile View',
       type: 'image',
       options: {
         hotspot: true,
@@ -46,6 +73,12 @@ export default {
       title: 'URL',
       type: 'url',
       description: 'URL of project'
+    },
+    {
+      name: 'source',
+      title: 'Source Code',
+      type: 'url',
+      description: 'Source code of project'
     },
     {
       title: 'Overview', 

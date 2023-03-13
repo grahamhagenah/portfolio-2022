@@ -7,8 +7,7 @@ export function wrapPageElement({element, props}) {
     <Layout {...props}>
       <Helmet>
         <title>Graham Hagenah</title>
-        <meta name="description" content="Web projects created by Graham HAgenah" />
-        <meta name="theme-color" content="#008f68" />
+        <meta name="description" content="Web projects created by Graham Hagenah" />
       </Helmet>
       {element}
       {console.clear()}
