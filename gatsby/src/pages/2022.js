@@ -49,12 +49,12 @@ const InfoStyles = styled.div`
   }
 `;
 
-export default function IndexPage( { data } ) {
+export default function TwentyTwentyTwoPage( { data } ) {
   const projects = data.projects.nodes
   return (
     <>
       <IntroStyles data-sal="slide-up" data-sal-delay="200" data-sal-easing="ease" data-sal-duration="1000">
-        <h1><strong>Web Developer</strong> in Brooklyn crafting elegant <em>digital</em> experiences</h1>
+        <h1>I'm Graham, a Web Developer living in Los Angeles.</h1>
       </IntroStyles>
       <InfoStyles>
         <ul>
@@ -83,12 +83,12 @@ export default function IndexPage( { data } ) {
 }
 
 export const query = graphql`
-  query projectQuery {
+  query projectQuery22 {
     projects: allSanityProjects {
       nodes {
         id
-        subtitle
         name
+        subtitle
         type
         slug {
           current
@@ -103,4 +103,6 @@ export const query = graphql`
       }
     }
   }
+
 `;
+

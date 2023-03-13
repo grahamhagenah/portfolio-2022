@@ -11,9 +11,8 @@ const IntroStyles = styled.div`
 
   h1 {
     font-size: 50px;
-    font-weight: 700;
+    font-weight: 500;
     padding: 10rem 0 5rem 0;
-    max-width: 650px;
     line-height: 1.25;
 
     @media screen and (max-width: 700px) {
@@ -96,6 +95,7 @@ const ProjectStyles = styled.div`
     button {
       background-color: white;
       color: var(--black);
+      border: 2px solid var(--black);
     }
   }
 
@@ -195,7 +195,7 @@ let stack = project.stack
   return (
     <div>
       <IntroStyles data-sal="slide-up" data-sal-delay="200" data-sal-easing="ease" data-sal-duration="1000">
-        <h1>{project.name}</h1>
+        <h1><strong>{project.name}</strong></h1>
       </IntroStyles>
       <ProjectStyles>
         {project.url !== null &&

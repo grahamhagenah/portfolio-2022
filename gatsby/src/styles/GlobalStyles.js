@@ -22,7 +22,7 @@ const GlobalStyles = createGlobalStyle`
 
   button {
     text-decoration: none;
-    border: 2px solid var(--black);
+    border: none;
     border-radius: 5px;
     padding: 5px 20px;
     height: 100%;
@@ -45,8 +45,7 @@ const GlobalStyles = createGlobalStyle`
   h1 {
     font-size: 50px;
     font-weight: 700;
-    padding: 10rem 0 8rem 0;
-    max-width: 650px;
+    padding: 20rem 0 15rem 0;
     line-height: 1.25;
 
     @media screen and (max-width: 700px) {
